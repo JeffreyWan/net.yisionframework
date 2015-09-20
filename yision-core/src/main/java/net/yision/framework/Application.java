@@ -77,12 +77,12 @@ public class Application extends SpringBootServletInitializer {
                 jgen.writeString("");
             }
         });
-        Hibernate4Module hibernateMoudle = new Hibernate4Module();
-        hibernateMoudle.disable(Hibernate4Module.Feature.USE_TRANSIENT_ANNOTATION);
+        Hibernate4Module hibernate4Module = new Hibernate4Module();
+        hibernate4Module.disable(Hibernate4Module.Feature.USE_TRANSIENT_ANNOTATION);
 
         return mapper
                 .registerModule(new JodaModule())
-                .registerModule(hibernateMoudle);
+                .registerModule(hibernate4Module);
     }
 
     @Bean
